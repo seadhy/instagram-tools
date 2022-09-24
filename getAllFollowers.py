@@ -4,7 +4,7 @@ def Followers(acc_username: str,acc_password: str):
     import time,os
     
     os.system('cls')
-    browser = webdriver.Chrome()
+    browser = webdriver.Chrome(executable_path=r'chromedriver.exe')
     
     browser.get("https://www.instagram.com/")
     
