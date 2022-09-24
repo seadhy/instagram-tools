@@ -11,7 +11,9 @@
 ## Usage
 1. Run `install.bat`
    
-2. Run `run.bat`
+2. Add your username and password to `userinfo.json`
+   
+3. Run `run.bat`
 
 ## DISCLAIMER
 This github repo is for EDUCATIONAL PURPOSES ONLY. I am NOT under any responsibility if a problem occurs.
