@@ -2,6 +2,9 @@ import os
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+import selenium.webdriver.support.expected_conditions as EC
+
 
 os.system('cls')
 
@@ -11,7 +14,7 @@ def getFollowed(acc_username: str, acc_password: str):
 
     browser.get("https://www.instagram.com/")
 
-    time.sleep(2)
+    WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.XPATH, '//*[@id="loginForm"]/div/div[1]/div/label/input')))
 
     username = browser.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[1]/div/label/input')
     password = browser.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[2]/div/label/input')

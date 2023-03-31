@@ -17,10 +17,10 @@ userinfo = load(open('userinfo.json', 'r', encoding='utf-8'))
 username = userinfo['username']
 password = userinfo['password']
 
-system('title coded by seadhy')
+system('title coded by github.com/seadhy')
 
 logo = """
-      [coded by seadhy#9999]
+      [coded by github.com/seadhy]
       
 [1] Get All Followers
 [2] Get All Followed
