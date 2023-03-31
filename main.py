@@ -1,16 +1,18 @@
-from Dedection import Dedection
-from getAllFollowed import Followed
-from getAllFollowers import Followers
+from modules.Dedection import Dedection
+from modules.getAllFollowed import Followed
+from modules.getAllFollowers import Followers
 from os import system
 from time import sleep
 from json import load
 
+
 def clear():
     system('cls')
 
+
 clear()
 
-userinfo = load(open('userinfo.json','r',encoding='utf-8'))
+userinfo = load(open('userinfo.json', 'r', encoding='utf-8'))
 
 username = userinfo['username']
 password = userinfo['password']
@@ -32,21 +34,21 @@ while True:
     choice = int(input('> '))
 
     if choice == 1:
-        Followers(username,password)
+        Followers(username, password)
         sleep(3)
-        input('press enter... ')
+        input('Press enter... ')
         clear()
         print(logo)
     elif choice == 2:
-        Followed(username,password)
+        Followed(username, password)
         sleep(3)
-        input('press enter... ')
+        input('Press enter... ')
         clear()
         print(logo)
     elif choice == 3:
         Dedection()
         sleep(3)
-        input('press enter... ')
+        input('Press enter... ')
         clear()
         print(logo)
     elif choice == 4:
