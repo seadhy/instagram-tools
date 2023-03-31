@@ -1,9 +1,9 @@
-from modules.Dedection import Dedection
-from modules.getAllFollowed import Followed
-from modules.getAllFollowers import Followers
 from os import system
 from time import sleep
 from json import load
+from modules.Dedection import checkFollowers
+from modules.getAllFollowed import getFollowed
+from modules.getAllFollowers import getFollowers
 
 
 def clear():
@@ -34,19 +34,19 @@ while True:
     choice = int(input('> '))
 
     if choice == 1:
-        Followers(username, password)
+        getFollowers(username, password)
         sleep(3)
         input('Press enter... ')
         clear()
         print(logo)
     elif choice == 2:
-        Followed(username, password)
+        getFollowed(username, password)
         sleep(3)
         input('Press enter... ')
         clear()
         print(logo)
     elif choice == 3:
-        Dedection()
+        checkFollowers()
         sleep(3)
         input('Press enter... ')
         clear()

@@ -6,7 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 import selenium.webdriver.support.expected_conditions as EC
 
 
-def Followers(acc_username: str, acc_password: str):
+def getFollowers(acc_username: str, acc_password: str):
     os.system('cls')
     browser = webdriver.Chrome(executable_path=r'../chromedriver.exe')
 
