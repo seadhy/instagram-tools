@@ -2,6 +2,9 @@ import os
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.wait import WebDriverWait
 import selenium.webdriver.support.expected_conditions as EC
 
@@ -10,8 +13,8 @@ os.system('cls')
 
 
 def getFollowed(acc_username: str, acc_password: str):
-    browser = webdriver.Chrome(executable_path=r'../chromedriver.exe')
-
+    browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=Options())
+    
     browser.get("https://www.instagram.com/")
 
     WebDriverWait(browser, 5).until(EC.presence_of_element_located((By.XPATH, '//*[@id="loginForm"]/div/div[1]/div/label/input')))
@@ -52,13 +55,14 @@ def getFollowed(acc_username: str, acc_password: str):
 
     os.system('cls')
     counter = 1
-    followers = browser.find_elements(By.CSS_SELECTOR, "._ab8y._ab94._ab97._ab9f._ab9k._ab9p._abcm")
+
+    followers = browser.find_elements(By.CSS_SELECTOR, "._ap3a._aaco._aacw._aacx._aad7._aade")
     for follower in followers:
         print(f"[i] {counter} ---> " + follower.text)
         followersList.append(follower.text + "\n")
         counter += 1
 
-    with open("../saved/followed.txt", "w", encoding="utf-8") as file:
+    with open("saved/followed.txt", "w", encoding="utf-8") as file:
         for follower in followersList:
             file.write(follower)
 
